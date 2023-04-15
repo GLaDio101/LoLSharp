@@ -1,0 +1,300 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E858DF52-4700-4AD0-AB33-0C3894C974FC}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>LoLSharp</RootNamespace>
+    <AssemblyName>LoLSharp</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>x64</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <Prefer32bit>false</Prefer32bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>x64</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="SharpDX, Version=4.2.0.0, Culture=neutral, PublicKeyToken=b4dcf0f35e5521f1, processorArchitecture=MSIL">
+      <HintPath>packages\SharpDX.4.2.0\lib\net45\SharpDX.dll</HintPath>
+    </Reference>
+    <Reference Include="SharpDX.Desktop, Version=4.2.0.0, Culture=neutral, PublicKeyToken=b4dcf0f35e5521f1, processorArchitecture=MSIL">
+      <HintPath>packages\SharpDX.Desktop.4.2.0\lib\net45\SharpDX.Desktop.dll</HintPath>
+    </Reference>
+    <Reference Include="SharpDX.Direct3D9, Version=4.2.0.0, Culture=neutral, PublicKeyToken=b4dcf0f35e5521f1, processorArchitecture=MSIL">
+      <HintPath>packages\SharpDX.Direct3D9.4.2.0\lib\net45\SharpDX.Direct3D9.dll</HintPath>
+    </Reference>
+    <Reference Include="SharpDX.DXGI, Version=4.2.0.0, Culture=neutral, PublicKeyToken=b4dcf0f35e5521f1, processorArchitecture=MSIL">
+      <HintPath>packages\SharpDX.DXGI.4.2.0\lib\net45\SharpDX.DXGI.dll</HintPath>
+    </Reference>
+    <Reference Include="SharpDX.Mathematics, Version=4.2.0.0, Culture=neutral, PublicKeyToken=b4dcf0f35e5521f1, processorArchitecture=MSIL">
+      <HintPath>packages\SharpDX.Mathematics.4.2.0\lib\net45\SharpDX.Mathematics.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Numerics">
+      <HintPath>..\..\..\..\..\..\Windows\Microsoft.Net\assembly\GAC_MSIL\System.Numerics\v4.0_4.0.0.0__b77a5c561934e089\System.Numerics.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+    <Reference Include="VAMemory">
+      <HintPath>..\..\Downloads\VAMemory.dll</HintPath>
+    </Reference>
+    <Reference Include="WindowsInput, Version=1.0.4.0, Culture=neutral, PublicKeyToken=9b287f7dc5073cad, processorArchitecture=MSIL">
+      <HintPath>packages\InputSimulator.1.0.4.0\lib\net20\WindowsInput.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="API\ActivePlayerData.cs" />
+    <Compile Include="API\AllPlayerData.cs" />
+    <Compile Include="API\GameStats.cs" />
+    <Compile Include="API\Models\Item.cs" />
+    <Compile Include="API\Models\PlayerData.cs" />
+    <Compile Include="API\Service.cs" />
+    <Compile Include="Core\Context.cs" />
+    <Compile Include="Core\CustomScriptAttribute.cs" />
+    <Compile Include="Core\CustomScriptBase.cs" />
+    <Compile Include="Core\CustomScriptController.cs" />
+    <Compile Include="Core\PerformanceTimer.cs" />
+    <Compile Include="Devices\Keyboard.cs" />
+    <Compile Include="Devices\Mouse.cs" />
+    <Compile Include="Differ\differ-cs-master\Collision.cs" />
+    <Compile Include="Differ\differ-cs-master\Data\RayCollision.cs" />
+    <Compile Include="Differ\differ-cs-master\Data\RayIntersection.cs" />
+    <Compile Include="Differ\differ-cs-master\Data\ShapeCollision.cs" />
+    <Compile Include="Differ\differ-cs-master\Math\Matrix.cs" />
+    <Compile Include="Differ\differ-cs-master\Math\Util.cs" />
+    <Compile Include="Differ\differ-cs-master\Math\Vector.cs" />
+    <Compile Include="Differ\differ-cs-master\Sat\Sat2D.cs" />
+    <Compile Include="Differ\differ-cs-master\Shapes\Circle.cs" />
+    <Compile Include="Differ\differ-cs-master\Shapes\Polygon.cs" />
+    <Compile Include="Differ\differ-cs-master\Shapes\Ray.cs" />
+    <Compile Include="Differ\differ-cs-master\Shapes\Shape.cs" />
+    <Compile Include="Enums\GameObjectOrder.cs" />
+    <Compile Include="Enums\LogLevel.cs" />
+    <Compile Include="Events\Base.cs" />
+    <Compile Include="Events\Drawing.cs" />
+    <Compile Include="Events\EventsManager.cs" />
+    <Compile Include="Events\Game.cs" />
+    <Compile Include="Extensions\Vector2Extension.cs" />
+    <Compile Include="Form1.cs" />
+    <Compile Include="Form1.Designer.cs" />
+    <Compile Include="GameScripts\AutoSmite.cs" />
+    <Compile Include="GameScripts\AutoSmite2.cs" />
+    <Compile Include="GameScripts\Karthus.cs" />
+    <Compile Include="GameScripts\Missile\MissileDedector.cs" />
+    <Compile Include="GameScripts\Missile\MissileVo.cs" />
+    <Compile Include="GameScripts\Orbwalker2.cs" />
+    <Compile Include="GameScripts\Test1Script.cs" />
+    <Compile Include="Game\AiManager.cs" />
+    <Compile Include="Game\Engine.cs" />
+    <Compile Include="Game\EntityVo.cs" />
+    <Compile Include="Game\Objects\LocalPlayer.cs" />
+    <Compile Include="Game\Objects\ObjectManager.cs" />
+    <Compile Include="Game\OffsetManager.cs" />
+    <Compile Include="Game\Renderer.cs" />
+    <Compile Include="Game\Spells\Spell.cs" />
+    <Compile Include="Game\Spells\SpellBook.cs" />
+    <Compile Include="Game\Spells\SpellClass.cs" />
+    <Compile Include="Game\TeamDistinct.cs" />
+    <Compile Include="Main.cs" />
+    <Compile Include="Managers\ScriptManager.cs" />
+    <Compile Include="Menu\BasePlate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Menu\BasePlate.Designer.cs">
+      <DependentUpon>BasePlate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\LogService.cs" />
+    <Compile Include="Modules\Memory.cs" />
+    <Compile Include="Modules\MissileService.cs" />
+    <Compile Include="Modules\NativeImport.cs" />
+    <Compile Include="Modules\PixelSearch.cs" />
+    <Compile Include="Modules\SAT.cs" />
+    <Compile Include="Modules\ScreenEx.cs" />
+    <Compile Include="Modules\SpellDBService.cs" />
+    <Compile Include="Modules\Timer.cs" />
+    <Compile Include="Modules\UnitRadiusService.cs" />
+    <Compile Include="Modules\Utils.cs" />
+    <Compile Include="GameScripts\Orbwalker.cs" />
+    <Compile Include="Overlay\Base.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Overlay\Base.Designer.cs">
+      <DependentUpon>Base.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Overlay\Drawing\DrawFactory.cs" />
+    <Compile Include="Program.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+    <None Include="SpellDB.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="UnitRadius.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Differ\differ-cs-master\Collision.cs.meta" />
+    <Content Include="Differ\differ-cs-master\Data.meta" />
+    <Content Include="Differ\differ-cs-master\Data\RayCollision.cs.meta" />
+    <Content Include="Differ\differ-cs-master\Data\RayIntersection.cs.meta" />
+    <Content Include="Differ\differ-cs-master\Data\ShapeCollision.cs.meta" />
+    <Content Include="Differ\differ-cs-master\Editor.meta" />
+    <Content Include="Differ\differ-cs-master\Math.meta" />
+    <Content Include="Differ\differ-cs-master\Math\Matrix.cs.meta" />
+    <Content Include="Differ\differ-cs-master\Math\Util.cs.meta" />
+    <Content Include="Differ\differ-cs-master\Math\Vector.cs.meta" />
+    <Content Include="Differ\differ-cs-master\README.md" />
+    <Content Include="Differ\differ-cs-master\README.md.meta" />
+    <Content Include="Differ\differ-cs-master\Sat.meta" />
+    <Content Include="Differ\differ-cs-master\Sat\Sat2D.cs.meta" />
+    <Content Include="Differ\differ-cs-master\Shapes.meta" />
+    <Content Include="Differ\differ-cs-master\Shapes\Circle.cs.meta" />
+    <Content Include="Differ\differ-cs-master\Shapes\Polygon.cs.meta" />
+    <Content Include="Differ\differ-cs-master\Shapes\Ray.cs.meta" />
+    <Content Include="Differ\differ-cs-master\Shapes\Shape.cs.meta" />
+    <Content Include="Differ\differ-cs-master\Test.meta" />
+    <Content Include="Missiles.json" />
+    <Content Include="packages\Newtonsoft.Json.12.0.3\.signature.p7s" />
+    <Content Include="packages\Newtonsoft.Json.12.0.3\lib\net20\Newtonsoft.Json.dll" />
+    <Content Include="packages\Newtonsoft.Json.12.0.3\lib\net20\Newtonsoft.Json.xml" />
+    <Content Include="packages\Newtonsoft.Json.12.0.3\lib\net35\Newtonsoft.Json.dll" />
+    <Content Include="packages\Newtonsoft.Json.12.0.3\lib\net35\Newtonsoft.Json.xml" />
+    <Content Include="packages\Newtonsoft.Json.12.0.3\lib\net40\Newtonsoft.Json.dll" />
+    <Content Include="packages\Newtonsoft.Json.12.0.3\lib\net40\Newtonsoft.Json.xml" />
+    <Content Include="packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll" />
+    <Content Include="packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.xml" />
+    <Content Include="packages\Newtonsoft.Json.12.0.3\lib\netstandard1.0\Newtonsoft.Json.dll" />
+    <Content Include="packages\Newtonsoft.Json.12.0.3\lib\netstandard1.0\Newtonsoft.Json.xml" />
+    <Content Include="packages\Newtonsoft.Json.12.0.3\lib\netstandard1.3\Newtonsoft.Json.dll" />
+    <Content Include="packages\Newtonsoft.Json.12.0.3\lib\netstandard1.3\Newtonsoft.Json.xml" />
+    <Content Include="packages\Newtonsoft.Json.12.0.3\lib\netstandard2.0\Newtonsoft.Json.dll" />
+    <Content Include="packages\Newtonsoft.Json.12.0.3\lib\netstandard2.0\Newtonsoft.Json.xml" />
+    <Content Include="packages\Newtonsoft.Json.12.0.3\lib\portable-net40+sl5+win8+wp8+wpa81\Newtonsoft.Json.dll" />
+    <Content Include="packages\Newtonsoft.Json.12.0.3\lib\portable-net40+sl5+win8+wp8+wpa81\Newtonsoft.Json.xml" />
+    <Content Include="packages\Newtonsoft.Json.12.0.3\lib\portable-net45+win8+wp8+wpa81\Newtonsoft.Json.dll" />
+    <Content Include="packages\Newtonsoft.Json.12.0.3\lib\portable-net45+win8+wp8+wpa81\Newtonsoft.Json.xml" />
+    <Content Include="packages\Newtonsoft.Json.12.0.3\LICENSE.md" />
+    <Content Include="packages\Newtonsoft.Json.12.0.3\Newtonsoft.Json.12.0.3.nupkg" />
+    <Content Include="packages\Newtonsoft.Json.12.0.3\packageIcon.png" />
+    <Content Include="packages\SharpDX.4.2.0\.signature.p7s" />
+    <Content Include="packages\SharpDX.4.2.0\lib\net40\.xml" />
+    <Content Include="packages\SharpDX.4.2.0\lib\net40\SharpDX.dll" />
+    <Content Include="packages\SharpDX.4.2.0\lib\net40\SharpDX.pdb" />
+    <Content Include="packages\SharpDX.4.2.0\lib\net45\.xml" />
+    <Content Include="packages\SharpDX.4.2.0\lib\net45\SharpDX.dll" />
+    <Content Include="packages\SharpDX.4.2.0\lib\net45\SharpDX.pdb" />
+    <Content Include="packages\SharpDX.4.2.0\lib\netstandard1.1\.xml" />
+    <Content Include="packages\SharpDX.4.2.0\lib\netstandard1.1\SharpDX.dll" />
+    <Content Include="packages\SharpDX.4.2.0\lib\netstandard1.1\SharpDX.pdb" />
+    <Content Include="packages\SharpDX.4.2.0\lib\uap10.0\.xml" />
+    <Content Include="packages\SharpDX.4.2.0\lib\uap10.0\SharpDX.dll" />
+    <Content Include="packages\SharpDX.4.2.0\lib\uap10.0\SharpDX.pdb" />
+    <Content Include="packages\SharpDX.4.2.0\lib\uap10.0\SharpDX.pri" />
+    <Content Include="packages\SharpDX.4.2.0\SharpDX.4.2.0.nupkg" />
+    <Content Include="packages\SharpDX.Desktop.4.2.0\.signature.p7s" />
+    <Content Include="packages\SharpDX.Desktop.4.2.0\lib\net40\SharpDX.Desktop.dll" />
+    <Content Include="packages\SharpDX.Desktop.4.2.0\lib\net40\SharpDX.Desktop.pdb" />
+    <Content Include="packages\SharpDX.Desktop.4.2.0\lib\net40\SharpDX.Desktop.xml" />
+    <Content Include="packages\SharpDX.Desktop.4.2.0\lib\net45\SharpDX.Desktop.dll" />
+    <Content Include="packages\SharpDX.Desktop.4.2.0\lib\net45\SharpDX.Desktop.pdb" />
+    <Content Include="packages\SharpDX.Desktop.4.2.0\lib\net45\SharpDX.Desktop.xml" />
+    <Content Include="packages\SharpDX.Desktop.4.2.0\SharpDX.Desktop.4.2.0.nupkg" />
+    <Content Include="packages\SharpDX.Direct3D9.4.2.0\.signature.p7s" />
+    <Content Include="packages\SharpDX.Direct3D9.4.2.0\lib\net40\SharpDX.Direct3D9.dll" />
+    <Content Include="packages\SharpDX.Direct3D9.4.2.0\lib\net40\SharpDX.Direct3D9.pdb" />
+    <Content Include="packages\SharpDX.Direct3D9.4.2.0\lib\net40\SharpDX.Direct3D9.xml" />
+    <Content Include="packages\SharpDX.Direct3D9.4.2.0\lib\net45\SharpDX.Direct3D9.dll" />
+    <Content Include="packages\SharpDX.Direct3D9.4.2.0\lib\net45\SharpDX.Direct3D9.pdb" />
+    <Content Include="packages\SharpDX.Direct3D9.4.2.0\lib\net45\SharpDX.Direct3D9.xml" />
+    <Content Include="packages\SharpDX.Direct3D9.4.2.0\lib\netstandard1.3\SharpDX.Direct3D9.dll" />
+    <Content Include="packages\SharpDX.Direct3D9.4.2.0\lib\netstandard1.3\SharpDX.Direct3D9.pdb" />
+    <Content Include="packages\SharpDX.Direct3D9.4.2.0\lib\netstandard1.3\SharpDX.Direct3D9.xml" />
+    <Content Include="packages\SharpDX.Direct3D9.4.2.0\SharpDX.Direct3D9.4.2.0.nupkg" />
+    <Content Include="packages\SharpDX.DXGI.4.2.0\.signature.p7s" />
+    <Content Include="packages\SharpDX.DXGI.4.2.0\lib\net40\SharpDX.DXGI.dll" />
+    <Content Include="packages\SharpDX.DXGI.4.2.0\lib\net40\SharpDX.DXGI.pdb" />
+    <Content Include="packages\SharpDX.DXGI.4.2.0\lib\net40\SharpDX.DXGI.xml" />
+    <Content Include="packages\SharpDX.DXGI.4.2.0\lib\net45\SharpDX.DXGI.dll" />
+    <Content Include="packages\SharpDX.DXGI.4.2.0\lib\net45\SharpDX.DXGI.pdb" />
+    <Content Include="packages\SharpDX.DXGI.4.2.0\lib\net45\SharpDX.DXGI.xml" />
+    <Content Include="packages\SharpDX.DXGI.4.2.0\lib\netstandard1.1\SharpDX.DXGI.dll" />
+    <Content Include="packages\SharpDX.DXGI.4.2.0\lib\netstandard1.1\SharpDX.DXGI.pdb" />
+    <Content Include="packages\SharpDX.DXGI.4.2.0\lib\netstandard1.1\SharpDX.DXGI.xml" />
+    <Content Include="packages\SharpDX.DXGI.4.2.0\lib\uap10.0\SharpDX.DXGI.dll" />
+    <Content Include="packages\SharpDX.DXGI.4.2.0\lib\uap10.0\SharpDX.DXGI.pdb" />
+    <Content Include="packages\SharpDX.DXGI.4.2.0\lib\uap10.0\SharpDX.DXGI.pri" />
+    <Content Include="packages\SharpDX.DXGI.4.2.0\lib\uap10.0\SharpDX.DXGI.xml" />
+    <Content Include="packages\SharpDX.DXGI.4.2.0\SharpDX.DXGI.4.2.0.nupkg" />
+    <Content Include="packages\SharpDX.Mathematics.4.2.0\.signature.p7s" />
+    <Content Include="packages\SharpDX.Mathematics.4.2.0\lib\net40\SharpDX.Mathematics.dll" />
+    <Content Include="packages\SharpDX.Mathematics.4.2.0\lib\net40\SharpDX.Mathematics.pdb" />
+    <Content Include="packages\SharpDX.Mathematics.4.2.0\lib\net40\SharpDX.Mathematics.xml" />
+    <Content Include="packages\SharpDX.Mathematics.4.2.0\lib\net45\SharpDX.Mathematics.dll" />
+    <Content Include="packages\SharpDX.Mathematics.4.2.0\lib\net45\SharpDX.Mathematics.pdb" />
+    <Content Include="packages\SharpDX.Mathematics.4.2.0\lib\net45\SharpDX.Mathematics.xml" />
+    <Content Include="packages\SharpDX.Mathematics.4.2.0\lib\netstandard1.1\SharpDX.Mathematics.dll" />
+    <Content Include="packages\SharpDX.Mathematics.4.2.0\lib\netstandard1.1\SharpDX.Mathematics.pdb" />
+    <Content Include="packages\SharpDX.Mathematics.4.2.0\lib\netstandard1.1\SharpDX.Mathematics.xml" />
+    <Content Include="packages\SharpDX.Mathematics.4.2.0\lib\uap10.0\SharpDX.Mathematics.dll" />
+    <Content Include="packages\SharpDX.Mathematics.4.2.0\lib\uap10.0\SharpDX.Mathematics.pdb" />
+    <Content Include="packages\SharpDX.Mathematics.4.2.0\lib\uap10.0\SharpDX.Mathematics.pri" />
+    <Content Include="packages\SharpDX.Mathematics.4.2.0\lib\uap10.0\SharpDX.Mathematics.xml" />
+    <Content Include="packages\SharpDX.Mathematics.4.2.0\SharpDX.Mathematics.4.2.0.nupkg" />
+    <Content Include="packages\VAMemory.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Menu\BasePlate.resx">
+      <DependentUpon>BasePlate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Overlay\Base.resx">
+      <DependentUpon>Base.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="FlatUI\FlatUI.csproj">
+      <Project>{fc508337-0212-4f3b-88fe-5c9ff09f4d47}</Project>
+      <Name>FlatUI</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Properties" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
