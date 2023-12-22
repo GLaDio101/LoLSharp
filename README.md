@@ -16,3 +16,4 @@ Currently, there are many bugs in the project as it is still in the development 
 
 For communication, please use the following link to join our Discord server: https://discord.gg/g4ycMm6adk
 
+https://www.youtube.com/watch?v=9-dre28FyzU
