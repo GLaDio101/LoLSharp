@@ -14,6 +14,6 @@ Please note that this project is not intended for cheating in the game, but rath
 
 Currently, there are many bugs in the project as it is still in the development stage.
 
-For communication, please use the following link to join our Discord server: https://discord.gg/g4ycMm6adk
+For communication, please use the following link to join our Discord server: https://discord.gg/Z7qTuZ6nYV
 
 https://www.youtube.com/watch?v=9-dre28FyzU
